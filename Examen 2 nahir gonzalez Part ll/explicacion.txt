@@ -1,0 +1,3 @@
+
+
+Como la multiplicación es conmutativa y el orden no altera el resultado, me di cuenta de que conviene hacer la recursión con el número más pequeño. Por eso, si el valor absoluto de 'x' es menor que el de 'y', el código intercambia los valores para llegar al caso base (cero) mucho más rápido y hacer menos sumas.

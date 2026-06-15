@@ -1,8 +1,0 @@
-
-::zilly+
-Z => Z => Z mult := fn(Z y) -> fn(Z x) -> if(if(x < 0, 0 - x, x) < if(y < 0, 0 - y, y), mult(x)(y), if(y = 0, 0, if(y > 0, x + mult(y - 1)(x), (0 - x) + mult(y + 1)(x))));
-
-mult(5)(-3)
-mult(-3)(5)
-mult(2)(-8)
-mult(-8)(2)

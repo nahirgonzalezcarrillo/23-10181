@@ -1,0 +1,29 @@
+::zilly+
+sys.reset();
+
+Z => Z chs := fn(Z n) -> sub(n)(0);
+Z => Z => Z add := fn(Z n) -> fn(Z k) -> sub(chs(n))(k);
+
+B bTrue := lt(1)(0);
+B bFalse := lt(0)(1);
+
+B => B myNot := fn(B p) -> if(p, bFalse, bTrue);
+
+Z => Z => B myGt := fn(Z n) -> fn(Z k) -> lt(k)(n);
+Z => Z => B myGe := fn(Z n) -> fn(Z k) -> myNot(lt(n)(k));
+Z => Z => B myLe := fn(Z n) -> fn(Z k) -> myNot(myGt(n)(k));
+Z => Z => B myEq := fn(Z n) -> fn(Z k) -> and(myLe(n)(k))(myGe(n)(k));
+Z => Z => B myNe := fn(Z n) -> fn(Z k) -> myNot(myEq(n)(k));
+
+Z => Z => Z myMax := fn(Z x) -> fn(Z y) -> if(myGt(x)(y), y, x);
+
+myGt(5)(10)
+myGt(10)(5)
+myEq(7)(7)
+myEq(7)(8)
+myLe(5)(5)
+myGe(3)(3)
+myNe(4)(5)
+add(3)(4)
+myMax(10)(3)
+myMax(3)(10)
